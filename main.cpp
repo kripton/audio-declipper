@@ -60,22 +60,22 @@ int main(int argc, char *argv[])
     float calcsample = 0.0;
     float m1, m2;
 
-    uchar length = 0;
-    uchar i = 1;
+    uint length = 0;
+    uint i = 1;
 
     while (scount) {
         scount = sf_read_float(infile, &sample, 1);
         if (!scount) {
             break;
         }
-        qDebug() << sample;
+        //qDebug() << sample;
         if (ISCLIPPED(sample)) {
             qDebug() << "clip start";
             firstclipsample = sample;
             while (ISCLIPPED(sample)) {
                 lastclipsample = sample;
                 sf_read_float(infile, &sample, 1);
-                qDebug() << sample;
+                qDebug() << sample << length;
 
                 if (!scount) {
                     break;

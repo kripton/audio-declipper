@@ -95,3 +95,14 @@ Dependencies:
 Checkout the repo, cd into it, run "qmake ." and "make".
 
 If everything worked okay: "./audio-declipper testfile.wav"
+
+
+Further notes
+-------------
+
+By now (thanks to Georg on the linux-audio-user mailing list) I've learned 
+that there's xiph.org's postfish which includes a nice declipper. That one 
+uses frequency-analysis via FFTW to restore the lost samples:
+https://svn.xiph.org/trunk/postfish
+
+Comparison to the linear declipper is in the "results"-folder, named banjo.png
